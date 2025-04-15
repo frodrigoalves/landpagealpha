@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro – SingulAI</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+  <script src="https://cdn.typebot.io/embed.js" defer></script>
+</head>
+<body class="cadastro-bg">
+  <div class="cadastro-container">
+    <h1>🧬 Cadastro – SingulAI</h1>
+    <p>Conecte sua alma e sua carteira ao tempo.</p>
+    <div id="typebot-container" class="typebot-box"></div>
+    <button id="connectWallet" class="btn-primary">🔗 Conectar Wallet</button>
+    <p id="walletStatus" class="wallet-status"></p>
+  </div>
+  <script>
+    window.typebotInit = {
+      typebot: "https://your-typebot-url.typebot.io",
+      target: "#typebot-container"
+    };
+    const walletStatus = document.getElementById("walletStatus");
+    document.getElementById("connectWallet").onclick = async () => {
+      if (typeof window.ethereum !== "undefined") {
+        try {
+          const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+          walletStatus.textContent = `Carteira conectada: ${accounts[0]}`;
+        } catch (error) {
+          walletStatus.textContent = "Erro ao conectar.";
+        }
+      } else {
+        walletStatus.textContent = "Metamask não encontrada.";
+      }
+    };
+  </script>
+</body>
+</html>

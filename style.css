@@ -1,0 +1,26 @@
+body.index-bg, body.cadastro-bg {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(ellipse at center, #0f0c29, #302b63, #24243e);
+  color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.hero-container, .cadastro-container {
+  text-align: center;
+  padding: 2rem;
+  max-width: 600px;
+}
+.btn-primary, .btn-secondary {
+  margin: 10px;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+.btn-primary { background-color: #9333ea; color: white; }
+.btn-secondary { background-color: transparent; border: 2px solid #a855f7; color: #a855f7; }
+.btn-primary:hover { background-color: #7e22ce; }
+.btn-secondary:hover { background-color: #a855f7; color: white; }
